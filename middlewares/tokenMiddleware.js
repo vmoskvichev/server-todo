@@ -1,4 +1,3 @@
-// const jwt = require('jsonwebtoken');
 
 const token = (req, res, next) => {
     const auth = req.headers.authorization;
@@ -14,8 +13,7 @@ const token = (req, res, next) => {
         }
         
     } 
-
-    res.status(403).send('WAS ERROR');
+    res.status(403).json({message: 'WAS ERROR'});
 }
 
 module.exports = token;
