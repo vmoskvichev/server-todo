@@ -3,8 +3,7 @@ const route = express.Router();
 const controllers = require('../controllers/todo');
 const middleware = require('../middlewares/validateMiddleware');
 const token = require('../middlewares/tokenMiddleware');
-const {add, toggle, remove} = require('../validate/todo');
-
+const { add, toggle, remove } = require('../validate/todo');
 
 route.get('/', token, controllers.getAll);
 route.post('/', middleware(add, 'body'), controllers.add);

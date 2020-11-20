@@ -11,12 +11,16 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(routes);
 
-mongoose.connect('mongodb://localhost:27017/myapp', {useUnifiedTopology: true, useNewUrlParser: true}, (err) => {
-    if (err) {
-        consolse.log(err)
-    }
+mongoose.connect(
+	'mongodb://localhost:27017/myapp',
+	{ useUnifiedTopology: true, useNewUrlParser: true },
+	(err) => {
+		if (err) {
+			consolse.log(err);
+		}
 
-    app.listen(PORT, (err) => {
-        err ? console.log(err) : console.log(`Server running on ${PORT} port`);
-    });
-});
+		app.listen(PORT, (err) => {
+			err ? console.log(err) : console.log(`Server running on ${PORT} port`);
+		});
+	}
+);

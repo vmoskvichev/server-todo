@@ -1,15 +1,17 @@
-const User = require('../models/user');
+const User = require('../models/user')
 
 const findByEmail = async (email) => {
-    const res = await User.findOne({email});
+    const res = await User.findOne({ email })
 
     try {
-        return res;
+        return res
     } catch (err) {
-        console.log(err);
+        console.log(err)
     }
-};
+}
 
 module.exports = {
-    findByEmail
+    findByEmail,
 }
+
+const a = 'hello'
